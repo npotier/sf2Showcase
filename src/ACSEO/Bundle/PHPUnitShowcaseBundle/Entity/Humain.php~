@@ -16,9 +16,9 @@ class Humain
     public static $SEXE_MASCULIN = 0;
     public static $SEXE_FEMININ  = 1;
 
-    public static $ORIENTATION_HETERO = 0;
-    public static $ORIENTATION_HOMO   = 1;
-    public static $ORIENTATION_BI     = 2;
+    public static $HETERO_SEXUEL = 0;
+    public static $HOMO_SEXUEL   = 1;
+    public static $BI_SEXUEL     = 2;
     /**
      * @var integer $id
      *
@@ -157,57 +157,4 @@ class Humain
         return $this->dateNaissance;
     }
 
-
-    /**
-     * Set sexe
-     *
-     * @param integer $sexe
-     * @return Humain
-     */
-    public function setSexe($sexe)
-    {
-        if (Humain::$SEXE_FEMININ != $sexe && Humain::$SEXE_MASCULIN !=  $sexe) {
-            throw new \InvalidArgumentException("Le sexe n'est pas reconnu");
-        }
-        $this->sexe = $sexe;
-        return $this;
-    }
-
-    /**
-     * Get sexe
-     *
-     * @return integer 
-     */
-    public function getSexe()
-    {
-        return $this->sexe;
-    }
-
-    /**
-     * Set orientationSexuelle
-     *
-     * @param integer $orientationSexuelle
-     * @return Humain
-     */
-    public function setOrientationSexuelle($orientationSexuelle)
-    {
-        if ( Humain::$ORIENTATION_BI != $orientationSexuelle &&
-             Humain::$ORIENTATION_HOMO != $orientationSexuelle && 
-             Humain::$ORIENTATION_HETERO != $orientationSexuelle
-            ) {
-            throw new \InvalidArgumentException("Cette orientation sexuelle n'est pas reconnue");   
-        }
-        $this->orientationSexuelle = $orientationSexuelle;
-        return $this;
-    }
-
-    /**
-     * Get orientationSexuelle
-     *
-     * @return integer 
-     */
-    public function getOrientationSexuelle()
-    {
-        return $this->orientationSexuelle;
-    }
 }
