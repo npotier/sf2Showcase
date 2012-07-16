@@ -13,6 +13,7 @@ Il inclue entre autre [FOSUserBundle][2] pour la gestion de la sécurité.
 
 1.1) Pour installer le projet, il suffit de taper la commande suivante :
 ----------------------------------
+
     php composer.phar install
 
 1.2) Vous devez ensuite éditer le fichier app/config/parameters.yml
@@ -24,6 +25,7 @@ Il inclue entre autre [FOSUserBundle][2] pour la gestion de la sécurité.
 
 1.4) Il faudra également créer un utilisateur :
 ----------------------------------
+
     php app/console fos:user:create
     Please choose an username : npotier
     Please choose an email : sf2PHPUnitshowcase@acseo-conseil.fr
@@ -39,6 +41,7 @@ Le projet est configuré !
 ========================
 Les tests unitaires et fonctionnels se situent dans src/ACSEO/Bundle/sf2PHPUnitShowcase/Tests.
 Pour les lancer, taper la commande suivante : 
+
     phpunit -c app
 
 
