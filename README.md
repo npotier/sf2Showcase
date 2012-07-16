@@ -5,7 +5,8 @@ Ce projet montre par l'exemple l'utilisation de tests unitaires et de tests fonc
 PHPUnit et le Framework Symfony2
 
 1) Projet
-----------------------------------
+========================
+
 
 Le projet repose sur Symfony2 et utilise [Composer][1].
 Il inclue entre autre [FOSUserBundle][2] pour la gestion de la sécurité.
@@ -35,7 +36,7 @@ Il inclue entre autre [FOSUserBundle][2] pour la gestion de la sécurité.
 Le projet est configuré !
 
 2) Lancement des tests : 
-----------------------------------
+========================
 Les tests unitaires et fonctionnels se situent dans src/ACSEO/Bundle/sf2PHPUnitShowcase/Tests.
 Pour les lancer, taper la commande suivante : 
     phpunit -c app
