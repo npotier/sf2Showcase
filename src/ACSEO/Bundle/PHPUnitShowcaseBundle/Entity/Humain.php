@@ -3,6 +3,7 @@
 namespace ACSEO\Bundle\PHPUnitShowcaseBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * ACSEO\Bundle\PHPUnitShowcaseBundle\Entity\Humain
@@ -32,6 +33,7 @@ class Humain
      * @var string $prenom
      *
      * @ORM\Column(name="prenom", type="string", length=255)
+     * @Assert\MaxLength(255)
      */
     private $prenom;
 
@@ -39,6 +41,7 @@ class Humain
      * @var string $nom
      *
      * @ORM\Column(name="nom", type="string", length=255)
+     * @Assert\MaxLength(255)
      */
     private $nom;
 
@@ -126,24 +129,25 @@ class Humain
     public function setDateNaissance($dateNaissance)
     {
         //Vérifie que la chaine de caractère passée en paramètre est valide
-        try {
-            $dateTimeDateNaiss = new \DateTime($dateNaissance);
+        if (false == $dateNaissance instanceof \DateTime) {
+            try {
+                $dateNaissance = new \DateTime($dateNaissance);
+            }
+            catch(\Exception $e) {
+                throw new \InvalidArgumentException("La date passée en paramètre n'est pas valide");
+            }
         }
-        catch(\Exception $e) {
-            throw new \InvalidArgumentException("La date passée en paramètre n'est pas valide");
-        }
-
         //Vérifie  si l'année est supérieure à 1900
-        if (1900 > (int) $dateTimeDateNaiss->format("Y")) {
+        if (1900 > (int) $dateNaissance->format("Y")) {
             throw new \InvalidArgumentException("La date passée en paramètre n'est pas valide, elle doit être supérieure à l'année 1900");   
         }
 
         //Vérifie  si l'année est supérieure à l'année courante
-        if ((int) date('Y') < (int) $dateTimeDateNaiss->format("Y")) {
+        if ((int) date('Y') < (int) $dateNaissance->format("Y")) {
             throw new \InvalidArgumentException("La date passée en paramètre n'est pas valide, elle doit être inférieure à l'année ". date("Y"));   
         }
 
-        $this->dateNaissance = $dateTimeDateNaiss;
+        $this->dateNaissance = $dateNaissance;
         return $this;
     }
 
