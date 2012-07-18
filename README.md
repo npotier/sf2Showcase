@@ -1,6 +1,5 @@
 ACSEO PHPUnit Showcase
 ========================
-
 Ce projet montre par l'exemple l'utilisation de tests unitaires et de tests fonctionnels avec
 PHPUnit et le Framework Symfony2
 
@@ -37,10 +36,10 @@ Il inclue entre autre [FOSUserBundle][2] pour la gestion de la sécurité.
 
 Le projet est configuré !
 
-2) Lancement des tests : 
+2) Lancement des tests :
 ========================
 Les tests unitaires et fonctionnels se situent dans src/ACSEO/Bundle/sf2PHPUnitShowcase/Tests.
-Pour les lancer, taper la commande suivante : 
+Pour les lancer, taper la commande suivante :
 
     phpunit -c app
 
