@@ -1,5 +1,6 @@
 <?php
 
+
 namespace ACSEO\Bundle\PHPUnitShowcaseBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
