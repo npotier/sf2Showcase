@@ -14,7 +14,7 @@ bazinga_faker:
             number: 3000
 
 framework:
-    #esi:             ~
+    esi: { enabled: true }
     translator:      { fallback: %locale% }
     secret:          %secret%
     router:
