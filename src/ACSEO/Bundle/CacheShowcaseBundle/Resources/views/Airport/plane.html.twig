@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+	<h1>Plane detail</h1>
+	<h2>Passengers</h2>
+	<ol>
+	{% for passenger in plane.passengers %}
+		<li>{{passenger.firstname}}  {{passenger.lastname}}. <br />&nbsp;&nbsp;&nbsp;<i>This passenger has {{passenger.luggages|length }} luggages</i></li>
+	{% endfor %}
+	</ol>
+{% endblock %}

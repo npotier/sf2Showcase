@@ -21,8 +21,9 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             //
+            new Bazinga\Bundle\FakerBundle\BazingaFakerBundle(),
+            //
             new ACSEO\Bundle\PHPUnitShowcaseBundle\ACSEOPHPUnitShowcaseBundle(),
-            //,
             new ACSEO\Bundle\CacheShowcaseBundle\ACSEOCacheShowcaseBundle(),
         );
 

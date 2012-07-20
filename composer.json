@@ -18,7 +18,9 @@
         "sensio/generator-bundle": "dev-master",
         "jms/security-extra-bundle": "1.1.*",
         "jms/di-extra-bundle": "1.0.*",
-        "friendsofsymfony/user-bundle":"dev-master"
+        "friendsofsymfony/user-bundle":"dev-master",
+        "willdurand/faker-bundle":"dev-master"
+
     },
     "scripts": {
         "post-install-cmd": [

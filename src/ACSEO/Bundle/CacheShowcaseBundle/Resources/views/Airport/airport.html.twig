@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+	<h1>Aiport dashboard</h1
+	<ul>
+	{% for plane in planes %}
+		<li>{{plane.name}} 
+			<a href="{{path('plane_show', {'id': plane.id})}}">see plane with no cache</a> | 
+			<a href="{{path('plane_show_cache', {'id': plane.id})}}">see plane with cache</a>
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

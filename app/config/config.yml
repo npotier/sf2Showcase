@@ -7,6 +7,11 @@ fos_user:
     firewall_name: main
     user_class: ACSEO\Bundle\PHPUnitShowcaseBundle\Entity\WebsiteAdmin
 
+bazinga_faker:
+    orm: doctrine
+    entities:
+        ACSEO\Bundle\CacheShowcaseBundle\Entity\PassengerLuggage:
+            number: 3000
 
 framework:
     #esi:             ~
