@@ -1,7 +1,9 @@
 {% extends "::base.html.twig" %}
 {% block body %}
-	<h1>Plane detail</h1>
+	<h1>Plane detail </h1>
+	{% render 'ACSEOCacheShowcaseBundle:Airport:showPlaneInfos' with {'id':plane.id}, {'standalone': true} %}
 	<h2>Passengers</h2>
+	<p><i>This part was generated at : {{ "now"|date("m/d/Y H:i:s") }}</i></p>
 	<ol>
 	{% for passenger in plane.passengers %}
 		<li>{{passenger.firstname}}  {{passenger.lastname}}. <br />&nbsp;&nbsp;&nbsp;<i>This passenger has {{passenger.luggages|length }} luggages</i></li>
