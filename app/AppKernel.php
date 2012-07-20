@@ -22,7 +22,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             //
             new ACSEO\Bundle\PHPUnitShowcaseBundle\ACSEOPHPUnitShowcaseBundle(),
-            //
+            //,
+            new ACSEO\Bundle\CacheShowcaseBundle\ACSEOCacheShowcaseBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,0 +1,162 @@
+<?php
+
+namespace ACSEO\Bundle\CacheShowcaseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ACSEO\Bundle\CacheShowcaseBundle\Entity\Plane
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="ACSEO\Bundle\CacheShowcaseBundle\Entity\PlaneRepository")
+ */
+class Plane
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string $name
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var integer $capacity
+     *
+     * @ORM\Column(name="capacity", type="integer")
+     */
+    private $capacity;
+
+    /**
+     * @var datetime $dateOfBirth
+     *
+     * @ORM\Column(name="dateOfBirth", type="datetime")
+     */
+    private $dateOfBirth;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Passenger", mappedBy="plane")
+     */
+    private $passengers;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Plane
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set capacity
+     *
+     * @param integer $capacity
+     * @return Plane
+     */
+    public function setCapacity($capacity)
+    {
+        $this->capacity = $capacity;
+        return $this;
+    }
+
+    /**
+     * Get capacity
+     *
+     * @return integer 
+     */
+    public function getCapacity()
+    {
+        return $this->capacity;
+    }
+
+    /**
+     * Set dateOfBirth
+     *
+     * @param datetime $dateOfBirth
+     * @return Plane
+     */
+    public function setDateOfBirth($dateOfBirth)
+    {
+        $this->dateOfBirth = $dateOfBirth;
+        return $this;
+    }
+
+    /**
+     * Get dateOfBirth
+     *
+     * @return datetime 
+     */
+    public function getDateOfBirth()
+    {
+        return $this->dateOfBirth;
+    }
+    public function __construct()
+    {
+        $this->passengers = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add passengers
+     *
+     * @param ACSEO\Bundle\CacheShowcaseBundle\Entity\Passenger $passengers
+     * @return Plane
+     */
+    public function addPassenger(\ACSEO\Bundle\CacheShowcaseBundle\Entity\Passenger $passengers)
+    {
+        $this->passengers[] = $passengers;
+        return $this;
+    }
+
+    /**
+     * Remove passengers
+     *
+     * @param <variableType$passengers
+     */
+    public function removePassenger(\ACSEO\Bundle\CacheShowcaseBundle\Entity\Passenger $passengers)
+    {
+        $this->passengers->removeElement($passengers);
+    }
+
+    /**
+     * Get passengers
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getPassengers()
+    {
+        return $this->passengers;
+    }
+}
